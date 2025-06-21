@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <style>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        text-align: center;
+        background-color: #1e1e1e;
+        color: #fff;
+        padding: 2rem;
+      }
+
+      .dice-container{
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        padding: 2rem;
+      }
+      
+      .dice{
+        width:100px;
+        height: 100px;
+      }
+
+      button {
+        margin-top: 2rem;
+         padding: 10px 20px;
+      font-size: 1.2rem;
+      background-color: #444;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+      transition:background 0.3s;
+    }
+
+
+    </style>  
+  </head>
+  <body>
+    <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="dice.html">Dice Game</a></li>
+
+    <h1> Dice Roller</h1>
+    <p> Click the button to roll two dice</p>
+
+    <div class="dice-container">
+      <img id="dice1" class="dice" src="https://github.com/Dev-Fahd2590/about-me.site/assets/your-dice-1.png" alt="Dice 1" />
+      <img id="dice2" class="dice" src="https://github.com/Dev-Fahd2590/about-me.site/assets/your-dice-2.png" alt="Dice 2" />
+    </div>
+
+    <button onclick="rollDice()">Roll Dice</button>
+
+    <script>
+      function rollDice() {
+        const dice1 = Math.floor(Math.random()* 6) + 1;
+        const dice2 = Math.floor(Math.random() * 6) + 1;
+      
+        document.getElementById("dice1").src =document.getElementById("dice1").src = `images/dice${dice1}.png`;
+
+         document.getElementById("dice2").src = document.getElementById("dice1").src = `images/dice${dice1}.png`;
+      }
+  </script>
+  </body>
+</html>
