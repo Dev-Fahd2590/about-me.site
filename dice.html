@@ -41,30 +41,30 @@
     </style>  
   </head>
   <body>
+    <ul>
     <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="dice.html">Dice Game</a></li>
+      </ul>
 
     <h1> Dice Roller</h1>
     <p> Click the button to roll two dice</p>
 
-    <div class="dice-container">
-      <img id="dice1" class="dice" src="https://github.com/Dev-Fahd2590/about-me.site/assets/your-dice-1.png" alt="Dice 1" />
-      <img id="dice2" class="dice" src="https://github.com/Dev-Fahd2590/about-me.site/assets/your-dice-2.png" alt="Dice 2" />
+    <div class="dice-container"><img id="dice1" class="dice" src="images/dice1.png" alt="Dice 1" />
+    <img id="dice2" class="dice" src="images/dice2.png" alt="Dice 2" />
     </div>
 
     <button onclick="rollDice()">Roll Dice</button>
 
     <script>
       function rollDice() {
-        const dice1 = Math.floor(Math.random()* 6) + 1;
-        const dice2 = Math.floor(Math.random() * 6) + 1;
-      
-        document.getElementById("dice1").src =document.getElementById("dice1").src = `images/dice${dice1}.png`;
+  const dice1 = Math.floor(Math.random() * 6) + 1;
+  const dice2 = Math.floor(Math.random() * 6) + 1;
 
-         document.getElementById("dice2").src = document.getElementById("dice1").src = `images/dice${dice1}.png`;
-      }
+  document.getElementById("dice1").src = `images/dice${dice1}.png`;
+  document.getElementById("dice2").src = `images/dice${dice2}.png`;
+}    
   </script>
   </body>
 </html>
