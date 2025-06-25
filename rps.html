@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0"/>
+    <title>Rock Paper Scissors</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        text-align: center;
+        background-color: #1e1e1e;
+        color:white;
+        padding: 2rem;
+      }
+
+      h1 {
+        color: #61dafb;
+      }
+      .scoreboard {
+        margin-top: 1rem;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      }
+      
+      .choices {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+
+      .choices button {
+         padding: 10px 20px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background-color: #5865F2;
+      color: white;
+      transition: background-color 0.3s;
+      }
+
+      .choices button:hover {
+        background-color: #4752c4;
+      }
+
+      .result {
+        margin-top: 2rem;
+        font-size: 1.4rem;
+        opacity: 0;
+        animation: fadeIn 0.6s ease forwards;
+      }
+
+      @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .choices {
+        flex-direction: column;
+        align-items: center;
+    }
+    .choices button {
+      wdith : 80%;
+    }
+  }
+    </style>
+  </head>
+
+  <body>
+    <h1> Rock Paper Scissors</h1>
+    <p>Choose dem Move</p>
+
+    <div class="scoreboard"></div>
+    <div> Wins:<span id="wins">0</span></div>
+    <div> Losses: <span id="Losses">0</span></div>
+    <div>🤝 Draws: <span id="draws">0</span></div>
+      
+    <div class="choices">
+      <button onclick="play('rock')">✊ Rock</button>
+      <button onclick="play('paper')">✋ Paper</button>
+      <button onclick="play('scissors')">✌️ Scissors</button>
+    </div>
+
+    <div class="result" id="result"></div>
+
+    <script>
+      let wins = 0;
+      let losses = 0;
+      let draws = 0;
+
+      function play(userChoice) {
+        const choices= ['rock', 'paper', 'scissors'];
+        const compterChoice = choices[Math.floor(Math.random() * 3)];
+
+        let result = '';
+        if (userChoice === compterChoice) {
+          result= "Aww it's a draw, Try again";
+        }
+        else if (
+          (userChoice === 'rock' && compterChoice=== 'scissors') ||
+          (userChoice === 'paper' && compterChoice === 'rock') ||
+          (userChoice === 'scissors' && compterChoice === 'paper') 
+        ) {
+        result = ` You win ${userChoice} beats ${compterChoice}`;
+        }
+        else{
+          result = `Ha loser, Try again ${computerChoice} beats ${userChoice}`;
+        }
+        resultText.style.opacity = 0;
+        void resultText.offsetWidth;
+        resultText.style.animation = "fadeIn 0.6s ease forwards";
+
+
+        document.getElementById('wins').textContent = wins;
+        document.getElementById('losses').textContent = losses;
+        document.getElementById('draws').textContent = draws;
+      } 
+    </script>
+    </body>
+    </html>
