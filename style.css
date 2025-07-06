@@ -129,7 +129,7 @@ button {
   margin-top: 1rem;
   padding: 10px 20px;
   font-size: 1rem;
-  background-color: #1DBF73; /* Fiverr green */
+  background-color: #0077cc; /* Blue Accent */
   border: none;
   color: #fff;
   cursor: pointer;
@@ -138,5 +138,5 @@ button {
 }
 
 button:hover {
-  background-color: #17a863;
+  background-color: #0077cc;
 }
